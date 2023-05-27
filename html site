@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random HTML Program</title>
+</head>
+<body>
+    <h1>Welcome to the Random HTML Program!</h1>
+
+    <h2>Choose an option:</h2>
+    <ul>
+        <li><a href="#" onclick="calculateSum()">Calculate sum of two numbers</a></li>
+        <li><a href="#" onclick="generateRandomColor()">Generate random color</a></li>
+        <li><a href="#" onclick="showCurrentTime()">Show current time</a></li>
+        <li><a href="#" onclick="playAudio()">Play audio</a></li>
+    </ul>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateSum() {
+            var num1 = parseFloat(prompt("Enter the first number:"));
+            var num2 = parseFloat(prompt("Enter the second number:"));
+            var sum = num1 + num2;
+            document.getElementById("result").innerHTML = "Sum: " + sum;
+        }
+
+        function generateRandomColor() {
+            var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.backgroundColor = color;
+            document.getElementById("result").innerHTML = "Random color: " + color;
+        }
+
+        function showCurrentTime() {
+            var currentTime = new Date().toLocaleTimeString();
+            document.getElementById("result").innerHTML = "Current time: " + currentTime;
+        }
+
+        function playAudio() {
+            var audio = new Audio('path/to/audio.mp3');
+            audio.play();
+            document.getElementById("result").innerHTML = "Playing audio...";
+        }
+    </script>
+</body>
+</html>
